@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1 class="text-xl">Les meilleurs spots d'Elise à Lyon</h1>
+<p>Attention ça rigole 0 ici.</p>
+
+<div class="">
+  <%= link_to 'Ajouter un spot', new_spot_path, class: 'rounded-full p-2 bg-gray-400 text-xs text-center'%>
+</div>
+
+
+  <div class="grid grid-cols-3 gap-0">
+    <% @spots.each do |spot| %>
+      <div class="bg-yellow-50 p-4 w-64 rounded mt-4 mx-auto">
+          <h3 class="mb-1"><%= spot.name %></h3>
+          <p class="mb-1"><%= spot.description %></p>
+          <p class="mb-1"><%= spot.location %></p>
+          <p class="mb-1"><%= spot.category %></p>
+
+
+        <%= link_to edit_spot_path(spot.id) do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
