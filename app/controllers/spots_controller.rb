@@ -22,7 +22,7 @@ class SpotsController < ApplicationController
 
   def update
     if @spot.update(spot_params)
-      redirect_to @spot, notice: 'Spot bien modifié'
+      redirect_to root_path, notice: 'Spot bien modifié'
     else
       render :edit
     end

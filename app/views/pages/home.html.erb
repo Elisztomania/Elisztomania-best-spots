@@ -13,6 +13,12 @@
           <p class="mb-1"><%= spot.description %></p>
           <p class="mb-1"><%= spot.location %></p>
           <p class="mb-1"><%= spot.category %></p>
+
+
+        <%= link_to edit_spot_path(spot.id) do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+
       </div>
     <% end %>
   </div>

@@ -1,11 +1,3 @@
 <h1 class="text-xl">Ajouter un spot</h1>
 
-<div class="bg-gray-200 p-2 w-1/2 mx-auto rounded">
-    <%= simple_form_for @spot do |f| %>
-      <%= f.input :name, label: "Nom du spot" %>
-      <%= f.input :location, label: "Adresse" %>
-      <%= f.input :category, label:"Catégorie", collection: Spot::CAT %>
-      <%= f.input :description, label: "Description du spot" %>
-      <%= f.button :submit, 'Créer', class:"p-2 text-xs rounded-full bg-red-400" %>
-    <% end %>
-</div>
+<%= render 'form', spot: @spot %>
