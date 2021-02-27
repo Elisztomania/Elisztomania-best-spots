@@ -5,7 +5,18 @@
   <%= link_to 'Ajouter un spot', new_spot_path, class: 'rounded-full p-2 bg-gray-400 text-xs text-center'%>
 </div>
 
+<!-- Search bar -->
+  <div class="text-center mb-3">
+    <%= form_tag spots_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "w-56 p-2 border border-black text-xs md:w-80", placeholder: "Cherchez un spot..." %>
+      <%= button_tag type: 'submit', class: "ml-2 h-8 w-8 text-center" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+<!-- Search bar -->
 
+<!-- Cards -->
   <div class="grid grid-cols-3 gap-0">
     <% @spots.each do |spot| %>
       <div class="bg-yellow-50 p-4 w-64 rounded mt-4 mx-auto">
@@ -29,4 +40,5 @@
       </div>
     <% end %>
   </div>
+  <!-- Cards -->
 
