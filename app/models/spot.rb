@@ -1,7 +1,7 @@
 class Spot < ApplicationRecord
   has_many_attached :photos
 
-  CAT = ["Café", "Vue", "Parc", "Archi"]
+  CAT = ["Café", "Vue", "Parc", "Archi", "Shop"]
 
   validates :name, presence: true
   validates :location, presence: true
