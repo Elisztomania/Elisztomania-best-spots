@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'golden' : '#FFD27A',
       },
+      boxShadow: {
+        'golden': '12px 12px 0 0 rgba(255,210,122, 0.8)',
+      },
     },
   },
   variants: {
