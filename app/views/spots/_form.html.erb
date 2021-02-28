@@ -1,4 +1,4 @@
-<div class="bg-gray-200 p-2 w-1/2 mx-auto rounded">
+
     <%= simple_form_for @spot do |f| %>
       <%= f.input :name, label: "Nom du spot" %>
       <%= f.input :location, label: "Adresse" %>
@@ -6,10 +6,12 @@
       <%= f.input :description, label: "Description du spot" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-      <% if @spot.new_record? %>
-        <%= f.button :submit, 'Créer', class:"p-2 text-xs rounded-full" %>
-      <% else %>
-        <%= f.button :submit, 'Mettre à jour', class:"p-2 text-xs rounded-full" %>
-      <% end %>
+      <div class="mt-16">
+        <% if @spot.new_record? %>
+          <%= f.button :submit, 'Créer', class:"absolute bottom-4 right-6 p-2 text-xs border border-black bg-white" %>
+        <% else %>
+          <%= f.button :submit, 'Mettre à jour', class:"absolute bottom-4 right-6 p-2 text-xs border border-black bg-white" %>
+        <% end %>
+      </div>
     <% end %>
-</div>
+
