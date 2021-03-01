@@ -3,7 +3,7 @@ class Spot < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
-  CAT = ["café", "vue", "parc", "archi", "shop", "food", "fripe", "ecolo"]
+  CAT = ["Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo"]
 
   validates :name, presence: true
   validates :location, presence: true
