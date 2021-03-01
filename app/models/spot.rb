@@ -9,5 +9,5 @@ class Spot < ApplicationRecord
   validates :location, presence: true
   validates :category, presence: true, inclusion: { in: CAT }
   validates :description, presence: true
-  # validates :photos, presence: true
+  validates :photos, presence: true
 end
