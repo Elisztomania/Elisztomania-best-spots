@@ -1,7 +1,9 @@
 class Spot < ApplicationRecord
   has_many_attached :photos
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
-  CAT = ["Café", "Vue", "Parc", "Archi", "Shop"]
+  CAT = ["Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo"]
 
   validates :name, presence: true
   validates :location, presence: true
