@@ -1,5 +1,5 @@
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from '!mapbox-gl';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -14,7 +14,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/satellite-streets-v11'
+      style: 'mapbox://styles/elisztomania/cklqsojag035j17oirk9pgbqr'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -29,4 +29,5 @@ const initMapbox = () => {
 };
 
 export { initMapbox };
+
 
