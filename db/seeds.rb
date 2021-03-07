@@ -64,4 +64,43 @@ puts "Creanting spots..."
   serre2.photos.attach(io: source, filename: 'serre2.jpg', content_type: 'image/jpg')
   serre2.save!
 
+  lv = Spot.create(name: "Look Vintage", location: "8 Quai de Bondy, 69005 Lyon", category:'Fripe', description: "Super petite friperie principalement pour femme mais avec une petite sélection homme.")
+  source = File.open("app/assets/images/spots/lv.jpg")
+  lv.photos.attach(io: source, filename: 'lv.jpg', content_type: 'image/jpg')
+  lv.save!
+
+  parking = Spot.create(name: "Parking des Halles", location: "156 Rue Garibaldi, 69003 Lyon", category:'Archi', description: "Un de mes endroits préférés pour faire des photos! La vue est folle et l'archi des bâtiments autour olalala.")
+  source = File.open("app/assets/images/spots/parking.jpg")
+  parking.photos.attach(io: source, filename: 'parking.jpg', content_type: 'image/jpg')
+  parking.save!
+
 puts "#{Spot.count} spots created!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
