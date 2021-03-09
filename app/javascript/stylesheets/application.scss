@@ -28,3 +28,9 @@ h2 {
 .mapboxgl-popup-content {
   text-align: center;
 }
+
+@layer components {
+  .btn-category {
+    @apply px-2 py-1 text-xs border border-black mr-1;
+  }
+}

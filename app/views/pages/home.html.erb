@@ -1,63 +1,42 @@
-<h1 class="text-xl">Les meilleurs spots d'Elise à Lyon</h1>
+<div class="h-screen">
+  <div class="border-b border-black">
+    <h1 class="text-md px-4 py-3 text-center text-upcase">Mes meilleurs spots de Lyon</h1>
+  </div>
 
-<div class="border border-black flex h-105 mt-5">
-  <div class="w-1/2 overflow-auto grid grid-cols-2 gap-4">
-    <div class="col-span-2">
-      <!-- Search bar -->
-        <div class="text-center my-3">
-          <%= form_tag spots_path, method: :get do %>
-            <%= text_field_tag :query, params[:query], class: "w-56 p-2 border border-black text-xs md:w-80", placeholder: "Cherchez un spot..." %>
-            <%= button_tag type: 'submit', class: "ml-2 h-8 w-8 text-center" do %>
-              <i class="fas fa-search"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <!-- Search bar -->
+  <div class="flex h-110">
+    <div class="w-1/2 border-r border-black overflow-auto">
 
-      <!-- Category buttons : "Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo" -->
-        <div class="text-center mb-4 md:mb-8 md:mt-4">
-          <div class="mb-3">
-            <%= link_to 'Café', root_path(category: 'Café'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-            <%= link_to 'Vue', root_path(category: 'Vue'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-            <%= link_to 'Parc', root_path(category: 'Parc'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-            <%= link_to 'Archi', root_path(category: 'Archi'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-            <%= link_to 'Shop', root_path(category: 'Shop'), class:"px-2 py-1 text-xs border border-black mr-1" %>
+      <!-- SEARCH -->
+      <div class="sticky top-0 bg-white py-4 mb-3">
+        <%= render 'shared/searchbar' %>
+      </div>
+      <!-- SEARCH -->
+
+      <!-- CARDS -->
+      <div class="grid grid-cols-2 gap-4 pl-2 pr-4 pb-2">
+        <% @spots.each do |spot| %>
+          <div class="border border-black shadow-golden w-48 mb-4 mx-auto text-xs">
+              <% spot.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-36' %>
+              <% end %>
+
+              <div class="p-2">
+                <h2 class="mb-1"><%= spot.name %></h2>
+                <p class="mb-1"><%= spot.description %></p>
+                <p class="mb-1 border border-black p-1 text-xxs font-bold"><%= spot.category %></p>
+              </div>
           </div>
-
-          <%= link_to 'Food', root_path(category: 'Food'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-          <%= link_to 'Fripe', root_path(category: 'Fripe'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-          <%= link_to 'Ecolo', root_path(category: 'Ecolo'), class:"px-2 py-1 text-xs border border-black mr-1" %>
-        </div>
-    </div>
-
-<!-- Cards -->
-    <% @spots.each do |spot| %>
-      <div class="bg-yellow-50 p-4 w-64 rounded mt-4 mx-auto">
-          <% spot.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-
-          <h2 class="mb-1"><%= spot.name %></h2>
-          <p class="mb-1"><%= spot.description %></p>
-          <p class="mb-1"><%= spot.location %></p>
-          <p class="mb-1"><%= spot.category %></p>
-
-        <%= link_to edit_spot_path(spot.id) do %>
-          <i class="fas fa-pen"></i>
         <% end %>
       </div>
-    <% end %>
-  </div>
-  <!-- Cards -->
+      <!-- CARDS -->
 
-  <!-- MAP -->
-    <div class="w-1/2">
-      <div id="map"
-         style="width: 100%; height: 560px;"
-         data-markers="<%= @markers.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
     </div>
-  <!-- MAP -->
+
+    <!-- MAP -->
+    <div class="w-1/2">
+      <%= render 'shared/map' %>
+    </div>
+    <!-- MAP -->
   </div>
+</div>
 
