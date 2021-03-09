@@ -23,6 +23,9 @@ module.exports = {
         '110': '38rem',
         '120': '42rem',
       },
+      fontSize: {
+        'xxs': '0.5rem',
+      },
     },
   },
   variants: {

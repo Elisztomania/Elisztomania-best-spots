@@ -69,7 +69,7 @@ puts "Creanting spots..."
   lv.photos.attach(io: source, filename: 'lv.jpg', content_type: 'image/jpg')
   lv.save!
 
-  parking = Spot.create(name: "Parking des Halles", location: "156 Rue Garibaldi, 69003 Lyon", category:'Archi', description: "Un de mes endroits préférés pour faire des photos! La vue est folle et l'archi des bâtiments autour olalala.")
+  parking = Spot.create(name: "Parking des Halles", location: "Parvis Renée Richard, 69003 Lyon", category:'Archi', description: "Un de mes endroits préférés pour faire des photos! La vue est folle et l'archi des bâtiments autour olalala.")
   source = File.open("app/assets/images/spots/parking.jpg")
   parking.photos.attach(io: source, filename: 'parking.jpg', content_type: 'image/jpg')
   parking.save!
