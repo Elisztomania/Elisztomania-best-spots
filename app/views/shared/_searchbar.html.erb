@@ -11,13 +11,12 @@
 
 <!-- Category buttons : "Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo" -->
 <div class="text-center">
-  <div class="mb-3">
+ <!-- <div class="mb-3"> -->
     <%= link_to 'Café', root_path(category: 'Café'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Café"}" %>
     <%= link_to 'Vue', root_path(category: 'Vue'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Vue"}" %>
     <%= link_to 'Parc', root_path(category: 'Parc'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Parc"}" %>
     <%= link_to 'Archi', root_path(category: 'Archi'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Archi"}" %>
     <%= link_to 'Shop', root_path(category: 'Shop'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Shop"}" %>
-  </div>
 
   <%= link_to 'Food', root_path(category: 'Food'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Food"}" %>
   <%= link_to 'Fripe', root_path(category: 'Fripe'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Fripe"}" %>
