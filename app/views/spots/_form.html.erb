@@ -4,6 +4,7 @@
       <%= f.input :location, label: "Adresse" %>
       <%= f.input :category, label:"Catégorie", collection: Spot::CAT %>
       <%= f.input :description, label: "Description du spot" %>
+      <%= f.input :website, label: "Site internet (si il y en a un)" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
       <div class="mt-16">

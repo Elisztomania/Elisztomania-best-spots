@@ -1,35 +1,44 @@
 <div class="h-screen">
-  <div class="border-b border-black">
-    <h1 class="text-md px-4 py-3 text-center text-upcase">Mes meilleurs spots de Lyon</h1>
-  </div>
+  <%= render 'shared/navbar' %>
 
-  <div class="flex h-110">
-    <div class="w-1/2 border-r border-black overflow-auto">
+  <div class="flex">
+    <div class="w-1/2 border-r border-black">
 
       <!-- SEARCH -->
-      <div class="sticky top-0 bg-white py-4 mb-3">
+      <div class="sticky top-0 bg-white py-6 mb-4">
         <%= render 'shared/searchbar' %>
       </div>
       <!-- SEARCH -->
 
-      <!-- CARDS -->
-      <div class="grid grid-cols-2 gap-4 pl-2 pr-4 pb-2">
-        <% @spots.each do |spot| %>
-          <div class="border border-black shadow-golden w-48 mb-4 mx-auto text-xs">
-              <% spot.photos.each do |photo| %>
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-36' %>
-              <% end %>
+      <!-- CARDS SECTION -->
+      <div class="grid grid-cols-2 gap-8 pl-2 pr-4 pb-4 overflow-auto h-110">
 
+        <!-- CARDS -->
+        <% @spots.each do |spot| %>
+          <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm mb-2">
+            <div class="relative">
+              <% spot.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-40' %>
+              <% end %>
+              <div class="absolute right-2 top-2 category-card"><%= spot.category %></div>
+            </div>
               <div class="p-2">
-                <h2 class="mb-1"><%= spot.name %></h2>
-                <p class="mb-1"><%= spot.description %></p>
-                <p class="mb-1 border border-black p-1 text-xxs font-bold"><%= spot.category %></p>
+                <div class="flex mb-2">
+                  <h2 class="pr-2"><%= spot.name %></h2>
+
+                  <% if spot.website.present? %>
+                    <a href="<%= spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-black hover:text-golden"></i> </a>
+                  <% end %>
+                </div>
+
+                <p class="mb-2"><%= spot.description %></p>
               </div>
           </div>
         <% end %>
+        <!-- CARDS -->
+        <div class="bg-white p-0.5"></div>
       </div>
-      <!-- CARDS -->
-
+      <!-- CARDS SECTION -->
     </div>
 
     <!-- MAP -->
