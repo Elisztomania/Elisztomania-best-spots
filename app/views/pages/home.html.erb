@@ -2,16 +2,18 @@
   <%= render 'shared/navbar' %>
 
   <div class="flex">
-    <div class="w-1/2 border-r border-black ">
+    <div class="w-1/2 border-r border-black">
 
       <!-- SEARCH -->
-      <div class="sticky top-0 bg-white py-6 mb-6">
+      <div class="sticky top-0 bg-white py-6 mb-4">
         <%= render 'shared/searchbar' %>
       </div>
       <!-- SEARCH -->
 
-      <!-- CARDS -->
+      <!-- CARDS SECTION -->
       <div class="grid grid-cols-2 gap-8 pl-2 pr-4 pb-4 overflow-auto h-110">
+
+        <!-- CARDS -->
         <% @spots.each do |spot| %>
           <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm mb-2">
             <div class="relative">
@@ -25,7 +27,7 @@
                   <h2 class="pr-2"><%= spot.name %></h2>
 
                   <% if spot.website.present? %>
-                    <a href="<%= spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-golden"></i> </a>
+                    <a href="<%= spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-black hover:text-golden"></i> </a>
                   <% end %>
                 </div>
 
@@ -33,9 +35,10 @@
               </div>
           </div>
         <% end %>
+        <!-- CARDS -->
+        <div class="bg-white p-0.5"></div>
       </div>
-      <!-- CARDS -->
-
+      <!-- CARDS SECTION -->
     </div>
 
     <!-- MAP -->
