@@ -10,6 +10,7 @@ module.exports = {
         'golden': '10px 10px 0 0 rgba(255,210,122, 0.8)',
       },
       height: {
+        '68': '17rem',
         '100': '27rem',
         '104': '31rem',
         '106': '36rem',
