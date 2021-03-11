@@ -13,7 +13,7 @@
       <!-- CARDS -->
       <div class="grid grid-cols-2 gap-8 pl-2 pr-4 pb-4 overflow-auto h-110">
         <% @spots.each do |spot| %>
-          <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm">
+          <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm mb-2">
             <div class="relative">
               <% spot.photos.each do |photo| %>
                 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-40' %>
@@ -21,7 +21,14 @@
               <div class="absolute right-2 top-2 category-card"><%= spot.category %></div>
             </div>
               <div class="p-2">
-                <h2 class="mb-2"><%= spot.name %></h2>
+                <div class="flex mb-2">
+                  <h2 class="pr-2"><%= spot.name %></h2>
+
+                  <% if spot.website.present? %>
+                    <a href="<%= spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-golden"></i> </a>
+                  <% end %>
+                </div>
+
                 <p class="mb-2"><%= spot.description %></p>
               </div>
           </div>

@@ -2,12 +2,12 @@ puts "Cleaning database... "
   Spot.destroy_all
 
 puts "Creanting spots..."
-  wdf = Spot.create(name: 'WeDressFair', location: '4 rue des Capucins, 69001 Lyon', category: 'Ecolo', description: 'THE shop de vêtements éco-responsables stylés.', website: "www.wedressfair.fr", latitude: 45.7690354, longitude: 4.832723)
+  wdf = Spot.create(name: 'WeDressFair', location: '4 rue des Capucins, 69001 Lyon', category: 'Ecolo', description: 'THE shop de vêtements éco-responsables stylés.', website: "https://www.wedressfair.fr", latitude: 45.7690354, longitude: 4.832723)
   source = File.open("app/assets/images/spots/wdf.JPG")
   wdf.photos.attach(io: source, filename: 'wdf.JPG', content_type: 'image/jpg')
   wdf.save!
 
-  lam = Spot.create(name: 'Les Ateliers de Marinette', location: '44 rue Saint-Georges, 69005 Lyon', category: 'Shop', description: 'La référence pour acheter les pelliluces argentique les moins chères de France + super déco!', website: "www.ateliers-marinette.fr")
+  lam = Spot.create(name: 'Les Ateliers de Marinette', location: '44 rue Saint-Georges, 69005 Lyon', category: 'Shop', description: 'La référence pour acheter les pelliluces argentique les moins chères de France + super déco!', website: "https://www.ateliers-marinette.fr")
   lam.update(latitude: 45.7578887, longitude: 4.8250567)
   source = File.open("app/assets/images/spots/lam.jpg")
   lam.photos.attach(io: source, filename: 'lam.jpg', content_type: 'image/jpg')
@@ -29,17 +29,17 @@ puts "Creanting spots..."
   arcade.photos.attach(io: source, filename: 'arcade.jpg', content_type: 'image/jpg')
   arcade.save!
 
-  bbstop = Spot.create(name: 'BubbleStop', location: '26 Rue Victor Hugo, 69002 Lyon', category: 'Food', description: "Best bubble tea pour ceux pas fan de tapioca, il y a pleins d'autres options fruitées.", website:"www.bubblestop.fr")
+  bbstop = Spot.create(name: 'BubbleStop', location: '26 Rue Victor Hugo, 69002 Lyon', category: 'Food', description: "Best bubble tea pour ceux pas fan de tapioca, il y a pleins d'autres options fruitées.", website:"https://www.bubblestop.fr")
   source = File.open("app/assets/images/spots/bbstop.jpg")
   bbstop.photos.attach(io: source, filename: 'bbstop.jpg', content_type: 'image/jpg')
   bbstop.save!
 
-  bw = Spot.create(name: 'Bënnie Organic', location: "18 Rue du Bât d'Argent, 69001 Lyon", category: 'Food', description: "Burgers, saldes, wraps, le tout bio et local.", website:"www.bennie-order.com/locator")
+  bw = Spot.create(name: 'Bënnie Organic', location: "18 Rue du Bât d'Argent, 69001 Lyon", category: 'Food', description: "Burgers, saldes, wraps, le tout bio et local.", website:"https://www.bennie-order.com/locator")
   source = File.open("app/assets/images/spots/bw.jpg")
   bw.photos.attach(io: source, filename: 'bw.jpg', content_type: 'image/jpg')
   bw.save!
 
-  mokxa = Spot.create(name: 'La Boîte à Café', location: "3 Rue de l'Abbé Rozier, 69001 Lyon", category: 'Café', description: "Petit café sympathique. Ils font leur propre café d'ailleurs!", website:"www.cafemokxa.com")
+  mokxa = Spot.create(name: 'La Boîte à Café', location: "3 Rue de l'Abbé Rozier, 69001 Lyon", category: 'Café', description: "Petit café sympathique. Ils font leur propre café d'ailleurs!", website:"https://www.cafemokxa.com")
   source = File.open("app/assets/images/spots/mokxa.jpg")
   mokxa.photos.attach(io: source, filename: 'mokxa.jpg', content_type: 'image/jpg')
   mokxa.save!
@@ -49,7 +49,7 @@ puts "Creanting spots..."
   pentes_vue.photos.attach(io: source, filename: 'pentes_vue.jpg', content_type: 'image/jpg')
   pentes_vue.save!
 
-  puzzle = Spot.create(name: 'Puzzle Café', location: "4 Rue de la Poulaillerie, 69002 Lyon", category: 'Café', description: "Le QG des cyclistes mais on peut y aller quand même si on fait pas de vélo.", website: "www.instagram.com/puzzlelyon")
+  puzzle = Spot.create(name: 'Puzzle Café', location: "4 Rue de la Poulaillerie, 69002 Lyon", category: 'Café', description: "Le QG des cyclistes mais on peut y aller quand même si on fait pas de vélo.", website: "https://www.instagram.com/puzzlelyon")
   source = File.open("app/assets/images/spots/puzzle.jpg")
   puzzle.photos.attach(io: source, filename: 'puzzle.jpg', content_type: 'image/jpg')
   puzzle.save!
@@ -64,7 +64,7 @@ puts "Creanting spots..."
   serre2.photos.attach(io: source, filename: 'serre2.jpg', content_type: 'image/jpg')
   serre2.save!
 
-  lv = Spot.create(name: "Look Vintage", location: "8 Quai de Bondy, 69005 Lyon", category:'Fripe', description: "Super petite friperie principalement pour femme mais avec une petite sélection homme.", website:"www.instagram.com/friperielookvintage")
+  lv = Spot.create(name: "Look Vintage", location: "8 Quai de Bondy, 69005 Lyon", category:'Fripe', description: "Super petite friperie principalement pour femme mais avec une petite sélection homme.", website:"https://www.instagram.com/friperielookvintage")
   source = File.open("app/assets/images/spots/lv.jpg")
   lv.photos.attach(io: source, filename: 'lv.jpg', content_type: 'image/jpg')
   lv.save!
