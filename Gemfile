@@ -38,6 +38,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 
 gem 'devise'
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
   gem 'pry-byebug'
