@@ -1,6 +1,6 @@
  <!-- Search bar -->
 <div class="text-center mb-3">
-  <%= form_tag spots_path, method: :get do %>
+  <%= form_tag root_path, method: :get do %>
     <%= text_field_tag :query, params[:query], class: "w-56 px-2 py-2 border border-black text-xs md:w-80", placeholder: "Cherche un spot..." %>
     <%= button_tag type: 'submit', class: "ml-1 h-6 w-6 text-center" do %>
       <i class="fas fa-search"></i>
