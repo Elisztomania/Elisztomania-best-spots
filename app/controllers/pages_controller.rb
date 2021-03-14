@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+
   def home
+    @user = current_user
     @spots = Spot.all
 
     @spots = @spots.where(category: params[:category]) if params[:category].present?
