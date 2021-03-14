@@ -1,6 +1,7 @@
 puts "Cleaning database... "
   Spot.destroy_all
 
+
 puts "Creanting spots..."
   wdf = Spot.create(name: 'WeDressFair', location: '4 rue des Capucins, 69001 Lyon', category: 'Ecolo', description: 'THE shop de vêtements éco-responsables stylés.', website: "https://www.wedressfair.fr", latitude: 45.7690354, longitude: 4.832723)
   source = File.open("app/assets/images/spots/wdf.JPG")

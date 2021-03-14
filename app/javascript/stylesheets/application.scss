@@ -38,3 +38,14 @@ h2 {
     @apply border border-black bg-white p-0.5 text-xxs font-bold w-10 text-center;
   }
 }
+
+.alert {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  z-index: 1000;
+  background-color: #F7F4EA;
+  padding: 4px;
+  font-size: 10px;
+  border-radius: 2px;
+}
