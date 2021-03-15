@@ -3,6 +3,8 @@
 @import "tailwindcss/utilities";
 @import "mapbox-gl/dist/mapbox-gl";
 
+@import "components/info_windox";
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Red+Hat+Display:ital,wght@0,500;0,700;1,900&display=swap');
 
 body {
@@ -19,14 +21,6 @@ h2 {
   font-family: 'Red Hat Display', sans-serif;
   font-weight: 700;
   font-style: bold;
-}
-
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
 }
 
 @layer components {
