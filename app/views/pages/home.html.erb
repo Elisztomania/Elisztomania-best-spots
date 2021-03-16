@@ -1,8 +1,8 @@
 <div class="h-screen">
   <%= render 'shared/navbar' %>
 
-  <div class="flex">
-    <div class="w-1/2 border-r border-black">
+  <div class="md:flex">
+    <div class="md:w-1/2 md:border-r md:border-black">
 
       <!-- SEARCH -->
       <div class="sticky top-0 bg-white py-6 mb-4">
@@ -11,7 +11,7 @@
       <!-- SEARCH -->
 
       <!-- CARDS SECTION -->
-      <div class="grid grid-cols-2 gap-8 pl-2 pr-4 pb-4 overflow-auto h-110">
+      <div class="md:grid md:grid-cols-2 md:gap-8 md:pl-2 md:pr-4 md:pb-4 md:overflow-auto md:h-110 hidden">
 
         <!-- CARDS -->
         <% @spots.each do |spot| %>
@@ -42,7 +42,7 @@
     </div>
 
     <!-- MAP -->
-    <div class="w-1/2">
+    <div class="h-124 md:h-140 md:w-1/2">
       <%= render 'shared/map' %>
     </div>
     <!-- MAP -->
