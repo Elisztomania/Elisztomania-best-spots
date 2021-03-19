@@ -25,7 +25,7 @@ h2 {
 
 @layer components {
   .btn-category {
-    @apply px-2 py-1 text-xs border border-black mr-1;
+    @apply px-2 py-1 md:text-xs text-xxs border border-black mr-1;
   }
 
   .category-card {
