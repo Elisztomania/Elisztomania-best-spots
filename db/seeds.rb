@@ -35,7 +35,7 @@ puts "Creanting spots..."
   bbstop.photos.attach(io: source, filename: 'bbstop.jpg', content_type: 'image/jpg')
   bbstop.save!
 
-  bw = Spot.create(name: 'Bënnie Organic', location: "18 Rue du Bât d'Argent, 69001 Lyon", category: 'Food', description: "Burgers, saldes, wraps, le tout bio et local.", website:"https://www.bennie-order.com/locator")
+  bw = Spot.create(name: 'Bënnie Organic', location: "18 Rue du Bât d'Argent, 69001 Lyon", category: 'Food', description: "Burgers, salades, wraps, le tout bio et local.", website:"https://www.bennie-order.com/locator")
   source = File.open("app/assets/images/spots/bw.jpg")
   bw.photos.attach(io: source, filename: 'bw.jpg', content_type: 'image/jpg')
   bw.save!
