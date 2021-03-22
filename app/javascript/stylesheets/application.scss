@@ -4,6 +4,7 @@
 @import "mapbox-gl/dist/mapbox-gl";
 
 @import "components/info_windox";
+@import "~swiper/swiper-bundle";
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Red+Hat+Display:ital,wght@0,500;0,700;1,900&display=swap');
 
@@ -30,6 +31,10 @@ h2 {
 
   .category-card {
     @apply border border-black bg-white p-0.5 text-xxs font-bold w-10 text-center;
+  }
+
+  .close-btn-modal {
+    @apply top-0 right-0 m-4 border border-black w-6 text-center p-0.5 bg-white;
   }
 }
 

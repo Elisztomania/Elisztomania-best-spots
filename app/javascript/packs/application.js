@@ -24,8 +24,15 @@ require("channels")
 import '../stylesheets/application.scss';
 import { initMapbox } from '../plugins/init_mapbox';
 
+import { Application } from "stimulus"
+import Carousel from "stimulus-carousel"
+
+const application = Application.start()
+application.register("carousel", Carousel)
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
 });
+
+import "controllers"
