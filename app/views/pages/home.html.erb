@@ -15,7 +15,7 @@
 
         <!-- CARDS -->
         <% @spots.each do |spot| %>
-          <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm mb-2">
+          <div class="relative border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm">
             <div class="relative">
 
               <%= cl_image_tag spot.photos.first.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-40' %>
@@ -35,9 +35,12 @@
 
               <p class="mb-2"><%= spot.description %></p>
 
-              <%= link_to spot_path(spot) do  %>
-                <i class="fas fa-info-circle"></i>
-              <% end %>
+              <div class="absolute right-2 bottom-2">
+                <%= link_to spot_path(spot) do  %>
+                  <i class="fas fa-info-circle text-xs"></i>
+                <% end %>
+              </div>
+
             </div>
           </div>
         <% end %>
