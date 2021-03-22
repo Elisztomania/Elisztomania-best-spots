@@ -1,37 +1,40 @@
+<div class="h-screen p-10 flex items-center">
 
+  <div class="p-14 mx-auto relative">
 
+    <div class="absolute close-btn-modal">
+      <%= link_to root_path do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
 
+    <div class="border border-black w-104 h-104 text-md mx-auto bg-white shadow-golden">
 
-
-
-
-<div class="container mt-20">
-
-  <div class="border border-black w-1/3 h-1/3 mx-auto text-md">
-      <div data-controller="carousel" class="swiper-container">
-        <div class="swiper-wrapper">
-          <% @spot.photos.each do |photo| %>
-            <div class="swiper-slide"><%= cl_image_tag photo.key, crop: :fill, class:'border-b border-black h-auto' %></div>
-          <% end %>
-        </div>
-      </div>
-
-
-    <div class="p-4">
-      <div class="flex mb-2">
-        <div class="flex-grow flex">
-          <h2 class="pr-2"><%= @spot.name %></h2>
-
-          <% if @spot.website.present? %>
-            <a href="<%= @spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-black hover:text-golden"></i> </a>
-          <% end %>
+        <div data-controller="carousel" class="swiper-container">
+          <div class="swiper-wrapper">
+            <% @spot.photos.each do |photo| %>
+              <div class="swiper-slide"><%= cl_image_tag photo.key, crop: :fill, class:'h-72' %></div>
+            <% end %>
+          </div>
         </div>
 
-        <div class="category-card"><%= @spot.category %></div>
-      </div>
 
-      <p class="mb-2"><%= @spot.description %></p>
+      <div class="p-6 border-t border-black ">
+        <div class="flex mb-4">
+          <div class="flex-grow flex">
+            <h2 class="pr-4"><%= @spot.name %></h2>
+
+            <% if @spot.website.present? %>
+              <a href="<%= @spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-black hover:text-golden"></i> </a>
+            <% end %>
+          </div>
+          <div class="flex items-center">
+            <div class="category-card text-md"><%= @spot.category %></div>
+          </div>
+        </div>
+
+        <p class="mb-2"><%= @spot.description %></p>
+      </div>
     </div>
   </div>
-
 </div>
