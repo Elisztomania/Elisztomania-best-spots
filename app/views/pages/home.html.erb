@@ -17,16 +17,11 @@
         <% @spots.each do |spot| %>
           <div class="border border-black shadow-golden w-56 h-68 mb-4 mx-auto text-sm mb-2">
             <div class="relative">
+
+              <%= cl_image_tag spot.photos.first.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-40' %>
+
               <div class="absolute right-2 top-2 category-card"><%= spot.category %></div>
 
-              <div data-controller="carousel" class="swiper-container">
-                <div class="swiper-wrapper">
-                  <% spot.photos.each do |photo| %>
-                    <div class="swiper-slide"><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:'border-b border-black h-40' %></div>
-                  <% end %>
-                </div>
-
-              </div>
             </div>
 
             <div class="p-2">
@@ -39,6 +34,10 @@
               </div>
 
               <p class="mb-2"><%= spot.description %></p>
+
+              <%= link_to spot_path(spot) do  %>
+                <i class="fas fa-info-circle"></i>
+              <% end %>
             </div>
           </div>
         <% end %>

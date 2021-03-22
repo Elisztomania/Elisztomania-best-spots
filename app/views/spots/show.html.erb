@@ -1,3 +1,37 @@
-<h1> Tout savoir <%= @spot.name %> </h1>
 
-<p> <%= @spot.description %> </p>
+
+
+
+
+
+
+<div class="container mt-20">
+
+  <div class="border border-black w-1/3 h-1/3 mx-auto text-md">
+      <div data-controller="carousel" class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @spot.photos.each do |photo| %>
+            <div class="swiper-slide"><%= cl_image_tag photo.key, crop: :fill, class:'border-b border-black h-auto' %></div>
+          <% end %>
+        </div>
+      </div>
+
+
+    <div class="p-4">
+      <div class="flex mb-2">
+        <div class="flex-grow flex">
+          <h2 class="pr-2"><%= @spot.name %></h2>
+
+          <% if @spot.website.present? %>
+            <a href="<%= @spot.website %>" target="_blank"><i class="fas fa-globe text-xs text-black hover:text-golden"></i> </a>
+          <% end %>
+        </div>
+
+        <div class="category-card"><%= @spot.category %></div>
+      </div>
+
+      <p class="mb-2"><%= @spot.description %></p>
+    </div>
+  </div>
+
+</div>
