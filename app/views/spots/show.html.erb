@@ -10,12 +10,15 @@
 
     <div class="border border-black w-104 h-104 text-md mx-auto bg-white shadow-golden">
 
-        <div data-controller="carousel" class="swiper-container">
+        <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{ "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" } }'>
           <div class="swiper-wrapper">
             <% @spot.photos.each do |photo| %>
-              <div class="swiper-slide"><%= cl_image_tag photo.key, crop: :fill, class:'h-72' %></div>
+              <div class="swiper-slide"><%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, class:'h-72' %></div>
             <% end %>
           </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
 
 
