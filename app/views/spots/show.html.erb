@@ -1,6 +1,6 @@
-<div class="h-screen p-10 flex items-center">
+<div class="md:h-screen md:p-10 flex items-center" style="background-image: <%= image_tag "fond.jpeg" %>">
 
-  <div class="p-14 mx-auto relative">
+  <div class="md:p-14 p-20 mx-auto relative">
 
     <div class="absolute close-btn-modal">
       <%= link_to root_path do %>
@@ -8,7 +8,7 @@
       <% end %>
     </div>
 
-    <div class="border border-black w-104 h-104 text-md mx-auto bg-white shadow-golden">
+    <div class="border border-black w-104 h-104 text-lg md:text-base mx-auto bg-white shadow-golden">
 
         <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{ "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" } }'>
           <div class="swiper-wrapper">
@@ -32,7 +32,7 @@
             <% end %>
           </div>
           <div class="flex items-center">
-            <div class="category-card text-md"><%= @spot.category %></div>
+            <div class="category-card text-sm md:text-xs"><%= @spot.category %></div>
           </div>
         </div>
 
