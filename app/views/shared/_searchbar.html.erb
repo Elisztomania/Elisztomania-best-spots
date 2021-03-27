@@ -1,27 +1,29 @@
  <!-- Search bar -->
-<div class="text-center mb-3">
-  <%= form_tag root_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "w-56 px-2 py-2 border border-black text-xs md:w-80", placeholder: "Que cherches-tu?" %>
-    <%= button_tag type: 'submit', class: "ml-1 h-6 w-6 text-center" do %>
-      <i class="fas fa-search"></i>
+
+  <div class="text-center mb-3">
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "w-56 px-2 py-2 border border-black text-xs md:w-80", placeholder: "Que cherches-tu?" %>
+      <%= button_tag type: 'submit', class: "ml-1 h-6 w-6 text-center" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-<!-- Search bar -->
+  </div>
+  <!-- Search bar -->
 
-<!-- Category buttons : "Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo" -->
-<div class="text-center md:mx-6 mx-20">
- <!-- <div class="mb-3"> -->
-  <%= link_to 'Café', root_path(category: 'Café'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Café"}" %>
-  <%= link_to 'Vue', root_path(category: 'Vue'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Vue"}" %>
-  <%= link_to 'Parc', root_path(category: 'Parc'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Parc"}" %>
-  <%= link_to 'Archi', root_path(category: 'Archi'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Archi"}" %>
-  <%= link_to 'Shop', root_path(category: 'Shop'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Shop"}" %>
+  <!-- Category buttons : "Café", "Vue", "Parc", "Archi", "Shop", "Food", "Fripe", "Ecolo" -->
+  <div class="text-center md:mx-6 mx-20">
+   <!-- <div class="mb-3"> -->
+    <%= link_to 'Café', root_path(category: 'Café'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Café"}" %>
+    <%= link_to 'Vue', root_path(category: 'Vue'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Vue"}" %>
+    <%= link_to 'Parc', root_path(category: 'Parc'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Parc"}" %>
+    <%= link_to 'Archi', root_path(category: 'Archi'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Archi"}" %>
+    <%= link_to 'Shop', root_path(category: 'Shop'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Shop"}" %>
 
-  <%= link_to 'Food', root_path(category: 'Food'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Food"}" %>
-  <%= link_to 'Fripe', root_path(category: 'Fripe'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Fripe"}" %>
-  <%= link_to 'Ecolo', root_path(category: 'Ecolo'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Ecolo"}" %>
-  <%= link_to root_path, class:"btn-category" do %>
-    <i class="fas fa-times"></i>
-  <% end %>
-</div>
+    <%= link_to 'Food', root_path(category: 'Food'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Food"}" %>
+    <%= link_to 'Fripe', root_path(category: 'Fripe'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Fripe"}" %>
+    <%= link_to 'Ecolo', root_path(category: 'Ecolo'), class:"btn-category #{"bg-golden font-bold " if params[:category] == "Ecolo"}" %>
+    <%= link_to root_path, class:"btn-category" do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+  </div>
+

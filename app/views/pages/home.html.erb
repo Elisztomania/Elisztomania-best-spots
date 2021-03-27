@@ -1,12 +1,19 @@
 <div class="h-screen">
+
   <%= render 'shared/navbar' %>
 
   <div class="md:flex">
     <div class="md:w-1/2 md:border-r md:border-black">
 
       <!-- SEARCH -->
-      <div class="sticky top-0 bg-white md:py-6 md:mb-4 py-4">
+      <div class="sticky top-0 bg-white md:py-6 md:mb-4 py-4 relative">
+
+        <div class="absolute top-1 right-2">
+        <%= image_tag "badge.png", alt: "badge", class:"h-28 animate-spin-slow" %>
+        </div>
+
         <%= render 'shared/searchbar' %>
+
       </div>
       <!-- SEARCH -->
 

@@ -33,6 +33,9 @@ module.exports = {
       fontSize: {
         'xxs': '0.5rem',
       },
+      animation: {
+        'spin-slow': 'spin 10s linear infinite',
+      }
     },
   },
   variants: {
