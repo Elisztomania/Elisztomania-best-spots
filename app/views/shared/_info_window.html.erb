@@ -1,11 +1,9 @@
 <div class="border-b border-black relative">
-  <% spot.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill%>
-  <% end %>
+    <%= cl_image_tag spot.photos.first.key, height: 250, width: 350, crop: :fill%>
   <div class="absolute left-2 top-2 category-card"><%= spot.category %></div>
 </div>
 
-<div class="m-2 ">
-  <h2><%= spot.name %></h2>
+<div class="m-2">
+  <h2 class="hover:underline focus:ring-white"> <%= link_to spot.name, spot_path(spot) %></h2>
   <p><%= spot.location %></p>
 </div>
