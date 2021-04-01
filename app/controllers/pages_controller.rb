@@ -5,7 +5,8 @@ class PagesController < ApplicationController
     @spots = Spot.all
 
     @spots = @spots.where(category: params[:category]) if params[:category].present?
-    @spots = @spots.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+
+    @spots = @spots.where("description ILIKE ?", "%#{params[:query]}%") if params[:query].present?
 
     @markers = @spots.geocoded.map do |spot|
       case spot.category
