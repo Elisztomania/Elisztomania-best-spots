@@ -36,6 +36,10 @@ h2 {
   .close-btn-modal {
     @apply top-0 right-0 m-4 border border-black w-6 text-center p-0.5 bg-white;
   }
+
+  .social {
+    @apply rounded-full bg-golden p-1;
+  }
 }
 
 .alert {
